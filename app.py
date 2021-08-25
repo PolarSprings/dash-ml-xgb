@@ -6,4 +6,5 @@ app = dash.Dash(__name__, suppress_callback_exceptions=True, external_stylesheet
                             'content': 'width=device-width, initial-scale=1.0'}]
                 )
 app.config.suppress_callback_exceptions = True
+app.scripts.config.serve_locally=True
 server = app.server
