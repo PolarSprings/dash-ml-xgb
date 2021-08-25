@@ -11,15 +11,6 @@ from app import server
 # Connect to your app pages
 from apps import growth, wage, education, distribution
 
-# app.layout = html.Div([
-#     dcc.Location(id='url', refresh=False),
-#     html.Div([
-#         dcc.Link('Video Games|', href='/apps/vgames'),
-#         dcc.Link('Other Products', href='/apps/global_sales'),
-#     ], className="row"),
-#     html.Div(id='page-content', children= [])
-# ])
-
 
 SIDEBAR_STYLE = {
     "font-family": "Times New Roman",
@@ -67,7 +58,7 @@ sidebar = html.Div(
 content = html.Div(id="page-content", children=[], style=CONTENT_STYLE)
 
 app.layout = html.Div([
-    dcc.Location(id="url", refresh=False),
+    dcc.Location(id="url", refresh=True),
     sidebar,
     content
 ])
@@ -88,10 +79,6 @@ def display_page(pathname):
     elif pathname == '/distribution':
         return distribution.layout
 
-    # elif pathname == '/apps/vgames':
-    #     return vgames.layout
-    # elif pathname == '/apps/global_sales':
-    #     return global_sales.layout
     else:
         return dbc.Jumbotron(
             [
