@@ -43,9 +43,9 @@ sidebar = html.Div(
         dbc.Nav(
             [
                 dbc.NavLink("Growth", href="/", active="exact"),
-                dbc.NavLink("Wage", href="/wage", active="exact"),
-                dbc.NavLink("Education", href="/education", active="exact"),
-                dbc.NavLink("Distribution", href="/distribution", active="exact"),
+                dbc.NavLink("Wage", href="/app/wage", active="exact"),
+                dbc.NavLink("Education", href="/app/education", active="exact"),
+                dbc.NavLink("Distribution", href="/app/distribution", active="exact"),
             ],
             vertical=True,
             pills=True,
@@ -72,11 +72,11 @@ app.layout = html.Div([
 def display_page(pathname):
     if pathname == "/":
         return growth.layout
-    elif pathname == '/wage':
+    elif pathname == '/app/wage':
         return wage.layout
-    elif pathname == '/education':
+    elif pathname == '/app/education':
         return education.layout
-    elif pathname == '/distribution':
+    elif pathname == '/app/distribution':
         return distribution.layout
 
     else:
