@@ -42,7 +42,7 @@ sidebar = html.Div(
         ),
         dbc.Nav(
             [
-                dbc.NavLink("Growth", href="/app/growth", active="exact", external_link=True),
+                dbc.NavLink("Growth", href="/", active="exact", external_link=True),
                 dbc.NavLink("Wage", href="/app/wage", active="exact", external_link=True),
                 dbc.NavLink("Education", href="/app/education", active="exact", external_link=True),
                 dbc.NavLink("Distribution", href="/app/distribution", active="exact", external_link=True),
@@ -70,7 +70,7 @@ app.layout = html.Div([
 @app.callback(Output('page-content', 'children'),
               [Input('url', 'pathname')])
 def display_page(pathname):
-    if pathname == "/app/growth":
+    if pathname == "/":
         return growth.layout
     elif pathname == '/app/wage':
         return wage.layout
