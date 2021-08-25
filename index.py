@@ -48,7 +48,7 @@ sidebar = html.Div(
                 dbc.NavLink("Distribution", href="/app/distribution", active="exact", external_link=True),
             ],
             vertical=True,
-            pills=True,
+            # pills=True,
         ),
     ],
     style=SIDEBAR_STYLE,
