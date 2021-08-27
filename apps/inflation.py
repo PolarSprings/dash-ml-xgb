@@ -13,6 +13,8 @@ import plotly.figure_factory as ff
 from plotly.subplots import make_subplots
 import plotly.figure_factory as ff
 
+from sklearn.cluster import DBSCAN
+
 from app import app
 
 # read in data
