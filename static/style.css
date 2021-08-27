@@ -1,0 +1,74 @@
+.SIDEBAR_STYLE {
+    font-family: Times New Roman;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 19rem;
+    padding: 2rem 1rem;
+    background-color: #1b1b1b;
+    color:white;
+}
+
+.SIDEBAR_STYLE a {
+    color: white;
+}
+
+.SIDEBAR_STYLE a:hover {
+    color: hotpink;
+}
+
+.CONTENT_STYLE {
+    position: relative;
+    top: 0;
+    margin-left: 19rem;
+    margin-right: 2rem;
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    margin: 0 3rem 3rem 3rem;
+    border-radius: 15px;
+    box-shadow: 0 0 20px grey;
+    padding: 2rem;
+}
+
+.intro {
+    size:18px;
+    color:black;
+}
+
+.imgsplit {
+    display: flex;
+    justify-content: space-around;
+}
+
+.imgsplitchild {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.home {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column
+}
+
+.imgcont {
+    padding:0.5rem;
+}
+
+.img {
+    width:8rem;
+    height:8rem;   
+    object-fit: contain;
+}
+
+.botright {
+    float:right;
+}
