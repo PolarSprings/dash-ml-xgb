@@ -42,7 +42,6 @@ feat3.update_layout({'title':{'text':'Sale Price by Details', 'font':{'size':28}
 
 feat4 = px.scatter_3d(newfeats,x='Location',y='Fundamentals',z='AdjSalePrice', opacity=0.5, color='Details')
 feat4.update_layout({'title':{'text':'Sale Price by Details, Fundamentals', 'font':{'size':28},'x':0.5}})
-iplot(feat4)
 
 # app code
 
