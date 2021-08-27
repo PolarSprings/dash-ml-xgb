@@ -9,53 +9,31 @@ from app import app
 from app import server
 
 # Connect to your app pages
-from apps import growth, wage, education, distribution
-
-
-SIDEBAR_STYLE = {
-    "font-family": "Times New Roman",
-    "position": "fixed",
-    "top": 0,
-    "left": 0,
-    "bottom": 0,
-    "width": "19rem",
-    "padding": "2rem 1rem",
-    "background-color": "#009986",
-    "color":"white"
-}
-
-CONTENT_STYLE = {
-    "position": "relative",
-    "top": 0,
-    "margin-left": "18rem",
-    "margin-right": "2rem",
-    "padding": "2rem 3rem",
-}
-
+from apps import home, features, inflation, scoring
 
 sidebar = html.Div(
     [
-        html.H2("Leif", className="display-2"),
+        html.H2("Data Analyst", className="display-4"),
         html.Hr(),
         html.P(
-            "Analysis of occupations in the future, by growth, wage, and education", className="lead"
+            "Using data from customers to improve the product", className="lead"
         ),
         dbc.Nav(
             [
-                dbc.NavLink("Growth", href="/", active="exact", external_link=True),
-                dbc.NavLink("Wage", href="/app/wage", active="exact", external_link=True),
-                dbc.NavLink("Education", href="/app/education", active="exact", external_link=True),
-                dbc.NavLink("Distribution", href="/app/distribution", active="exact", external_link=True),
+                dbc.NavLink("Home", href="/", active="exact", external_link=True),
+                dbc.NavLink("Features", href="/features", active="exact", external_link=True),
+                dbc.NavLink("Inflation", href="/inflation", active="exact", external_link=True),
+                dbc.NavLink("Scoring", href="/scoring", active="exact", external_link=True),
             ],
             vertical=True,
-            # pills=True,
+            pills=True,
         ),
     ],
-    style=SIDEBAR_STYLE,
+    className="SIDEBAR_STYLE",
 )
 
 
-content = html.Div(id="page-content", children=[], style=CONTENT_STYLE)
+content = html.Div(id="page-content", children=[], className="CONTENT_STYLE")
 
 app.layout = html.Div([
     dcc.Location(id="url", refresh=True),
@@ -64,20 +42,17 @@ app.layout = html.Div([
 ])
 
 
-# content = html.Div(id="page-content", children=[], style=CONTENT_STYLE)
-
-
 @app.callback(Output('page-content', 'children'),
               [Input('url', 'pathname')])
 def display_page(pathname):
     if pathname == "/":
-        return growth.layout
-    elif pathname == '/app/wage':
-        return wage.layout
-    elif pathname == '/app/education':
-        return education.layout
-    elif pathname == '/app/distribution':
-        return distribution.layout
+        return home.layout
+    elif pathname == '/features':
+        return features.layout
+    elif pathname == '/inflation':
+        return inflation.layout
+    elif pathname == '/scoring':
+        return scoring.layout
     else:
         return dbc.Jumbotron(
             [
@@ -90,5 +65,6 @@ def display_page(pathname):
 
 if __name__ == '__main__':
     app.run_server(debug=False, 
-        host='0.0.0.0'
+        # host='0.0.0.0'
+        port='8050'
         )
