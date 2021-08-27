@@ -18,9 +18,9 @@ from sklearn.cluster import DBSCAN
 from app import app
 
 # read in data
-repo1 = ('C:/Users/benno/OneDrive/Python/Dash/Template - withouttopbar/assets/Data/housing_sparse_matrices.csv')
-repo2 = ('C:/Users/benno/OneDrive/Python/Dash/Template - withouttopbar/assets/Data/model_selec_dim.csv')
-repo3 = ('C:/Users/benno/OneDrive/Python/Dash/Template - withouttopbar/assets/Data/feature_creation.csv')
+repo1 = ('https://raw.githubusercontent.com/PolarSprings/dash-ml-xgb/master/assets/Data/housing_sparse_matrices.csv')
+repo2 = ('https://raw.githubusercontent.com/PolarSprings/dash-ml-xgb/master/assets/Data/model_selec_dim.csv')
+repo3 = ('https://raw.githubusercontent.com/PolarSprings/dash-ml-xgb/master/assets/Data/feature_creation.csv')
 
 orighousing = pd.read_csv(repo1, skipinitialspace=True)
 simpledim = pd.read_csv(repo2, skipinitialspace=True)

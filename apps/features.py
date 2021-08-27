@@ -16,7 +16,7 @@ import plotly.figure_factory as ff
 from app import app
 
 # read in data
-repo3 = ('C:/Users/benno/OneDrive/Python/Dash/Template - withouttopbar/assets/Data/feature_creation.csv')
+repo3 = ('https://raw.githubusercontent.com/PolarSprings/dash-ml-xgb/master/assets/Data/feature_creation.csv')
 
 newfeats = pd.read_csv(repo3, skipinitialspace=True)
 

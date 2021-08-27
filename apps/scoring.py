@@ -16,8 +16,8 @@ import xgboost as xgb
 from app import app
 
 # read in data
-repo2 = ('C:/Users/benno/OneDrive/Python/Dash/Template - withouttopbar/assets/Data/model_selec_dim.csv')
-repo4 = ('C:/Users/benno/OneDrive/Python/Dash/Template - withouttopbar/assets/Data/train_scores.csv')
+repo2 = ('https://raw.githubusercontent.com/PolarSprings/dash-ml-xgb/master/assets/Data/model_selec_dim.csv')
+repo4 = ('https://raw.githubusercontent.com/PolarSprings/dash-ml-xgb/master/assets/Data/train_scores.csv')
 
 simpledim = pd.read_csv(repo2, skipinitialspace=True)
 scoring = pd.read_csv(repo4, skipinitialspace=True)
