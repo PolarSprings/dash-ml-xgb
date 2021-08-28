@@ -52,7 +52,7 @@ layout = html.Div([
 			className='introtitle text'
 			),
 		html.P(
-			'This section details the creation of several important variables, such as "Location", "Fundamentals", and "Details". The majority of the info contained in these variables are part of the original data as ordinal, nominal, and continuous features. Because of the structure of the data, scores tended to improve as certain variables were combined together.',
+			'This section details the creation of several important variables, such as "Location", "Fundamentals", and "Details". The majority of the info contained in these variables are part of the data as categorical and continuous features, but because of the structure of the data, some scores tended to improve as these variables were combined together.',
 			className='intro text'
 			)
 		],

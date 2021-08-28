@@ -67,9 +67,14 @@ layout = html.Div([
 			className='introtitle text'
 			),
 		html.P(
-			'The cost of housing between 2005 and 2010 different greatly by year. One challenge within this analysis was how to best compare a house bought in 2010 with a house bought in 2006, when the financial crisis hit. This strategy took into account this change in prices by year and month, keeping in mind these ordinal features likely had some correlation in the original data. After this, we decided to look into the role of inflation, as houses bought earlier benefited from a better price. We standardized these prices by the inflation index and updated our dependent variable to reflect an adjusted sales price. This freed up our analysis to focus more on classification as our baseline measurement.',
+			'The cost of housing between 2005 and 2010 differed greatly by year.',
 			className='intro text'
-			)
+			),
+		html.Ul([
+			html.Li('The cost of a house in 2010 was different than the cost of that same house in 2006. This financial crisis rocked the housing market and prices were likely considerably different.',className='intro text'),
+			html.Li('The features Year Sold and Month Sold were valuable pieces of data, that helped us determine averages by year. We kept this data as "circular scales".',className='intro text'),
+			html.Li('We also considered the role of inflation. To be specific, we standardized the dependent variable so that it could be interpreted across time.',className='intro text'),
+			]),
 		],
 		className='inflation header'),
 	dcc.Graph(id='hist',

@@ -75,11 +75,16 @@ layout = html.Div([
             className='introtitle text'
             ),
         html.P(
-            "The final data for this model went through dimensionality reduction with PCA, which simplified the original data from 250 dimensions to around 10-15. We also examined new clustering methods, including unsupervised methods such as DBSCAN, as a potential alternative to more standard reduction techniques. This allowed us to compare both linear and tree-based models, to achieve R2 scores of 99% for train and 90% for test sets. As this was a regression problem and not a classification problem, given more time, we would consider opening up the data to original dimensionality as well as to more fine-tuned segmentation, which could both reduce overfitting and create a more accurate model. After hyperparameter tuning, RMSE was 21,231 which we felt was acceptable given the data at hand.",
+            "The final data for this model went through dimensionality reduction (PCA, 250 -> 10-15), clustering (unsupervised, DBSCAN), full model selection, and hyperparameter tuning.",
             className='intro text'
             ),
         html.P(
-            "Zoom in to see how the predictions tie in to the actuals.",
+            "As this was not a classification problem, compared models to achieve R2 scores of 99% for train and 90% for test sets. If given more time, we would consider opening up the data in terms of dimensionality as well as to more fine tuned segmentation, which could both reduce overfitting and create a more accurate model. The final RMSE for this model was 21,231, acceptable given the data at hand.",
+            className='intro text'
+            ),
+
+        html.P(
+            "Zoom in to see how the true data points compare with the predictions.",
             className='intro text'
             ),
         ],

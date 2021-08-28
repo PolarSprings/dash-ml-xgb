@@ -51,19 +51,19 @@ layout = html.Div([
 
 		html.Hr(),
 		html.P(
-			'I am a data analyst with a background in content strategy. My experience with data is hands on, focusing on how data can improve the product. I believe the perfect set of data exists for any strategy, and a good data analyst can find the data helps.',
+			'I am a data analyst with a background in content strategy. My experience with data is hands on, focusing on how data can improve the product. I believe the perfect set of data exists for any strategy, and a good data analyst can find the data that helps.',
 			className='intro text'
 			),
 		html.P(
-			'The work that Unsupervised is doing genuinely thrills me. It does seem like the product is helping to shape the lives of those in need. It can be useful when dealing with machine learning products for someone to keep an eye on customer challenges, to relay these success stories back to the team. With my background in marketing and fluency in machine learning I would be a great fit for this role.',
+			'The work Unsupervised is doing in the space is genuinely thrilling to me. It seems like the concept of machine learning, especially for data generation and strategy development, is helping a lot people. As a former marketing specialist with fluency in machine learning models, I would be a great fit for understanding these customer challenges and relaying them to the team.',
 			className='intro text'
 			),
 		html.Hr(),
 		html.H4(
-			'Dash'
+			'Plotly'
 			),
 		html.P(
-			'This dashboard uses machine learning to predict the prices of homes in Aimes, Iowa. Full stack used for this example: pandas, scikit-learn, plotly, xgboost.',
+			'This dashboard uses machine learning to predict the prices of homes in Aimes, Iowa. Full stack used for this example: pandas, scikit-learn, plotly / dash, xgboost.',
 			className='intro text'
 			)
 	],
