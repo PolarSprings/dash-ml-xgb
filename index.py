@@ -13,7 +13,7 @@ from apps import home, features, inflation, scoring
 
 sidebar = html.Div(
     [
-        html.H2("Data Analyst", className="display-4"),
+        html.H2("Data Scientist Analyst", className="display-4"),
         html.Hr(),
         html.P(
             "Using data from customers to improve the product", className="lead"
