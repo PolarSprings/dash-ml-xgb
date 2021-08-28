@@ -79,7 +79,7 @@ layout = html.Div([
             className='intro text'
             ),
         html.P(
-            "As this was not a classification problem, compared models to achieve R2 scores of 99% for train and 90% for test sets. If given more time, we would consider opening up the data in terms of dimensionality as well as to more fine tuned segmentation, which could both reduce overfitting and create a more accurate model. The final RMSE for this model was 21,231, acceptable given the data at hand.",
+            "As this was not a classification problem, this team compared models to achieve R2 scores of 99% for train and 90% for test sets. If given more time, we would consider opening up the data in terms of dimensionality as well as to more fine tuned segmentation, which could both reduce overfitting and create a more accurate model. The final RMSE for this model was 21,231, acceptable given the data at hand.",
             className='intro text'
             ),
 
