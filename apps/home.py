@@ -51,7 +51,7 @@ layout = html.Div([
 
 		html.Hr(),
 		html.P(
-			'I am a data scientist with a preference for classification. In my work, I use tree based models to set and deliver solid numerical predictions based on clusters. I believe the perfect set of data exists for any situation, and that the only challenge is to find it.',
+			"""I am a data scientist with a preference for classification. In my work, I use tree based models to set and deliver solid numerical predictions based on clusters. I believe that the perfect set of data exists for any situation, and that the only challenge is to find it.""",
 			className='intro text'
 			),
 		html.P(
