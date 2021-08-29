@@ -51,11 +51,11 @@ layout = html.Div([
 
 		html.Hr(),
 		html.P(
-			'I am a data analyst with a background in content strategy. My experience with data is hands on, focusing on how data can improve the product. I believe the perfect set of data exists for any strategy, and a good data analyst can find the data that helps.',
+			'I am a data scientist with a preference for classification. In my work, I use tree based models to set and deliver solid numerical predictions based on clusters. I believe the perfect set of data exists for any situation, and that the only challenge is to find it.',
 			className='intro text'
 			),
 		html.P(
-			'The work Unsupervised is doing in the space is genuinely thrilling to me. It seems like the concept of machine learning, especially for data generation and strategy development, is helping a lot people. As a former marketing specialist with fluency in machine learning models, I would be a great fit for understanding these customer challenges and relaying them to the team.',
+			'AI that can make predictions is something fairly new to the world of machine learning - at least, as far as application goes. I would be interested to join the client side in exploring these results, and communicating how they shape our clients journey back to the product team. With my background working across teams at Alibaba, I would be a great fit for the role.',
 			className='intro text'
 			),
 		html.Hr(),
