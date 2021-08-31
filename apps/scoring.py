@@ -17,7 +17,7 @@ from app import app
 
 # read in data
 repo2 = ('https://raw.githubusercontent.com/PolarSprings/dash-ml-xgb/master/assets/Data/model_selec_dim.csv')
-repo4 = ('https://raw.githubusercontent.com/PolarSprings/dash-ml-xgb/master/assets/Data/train_scores.csv')
+repo4 = ('https://raw.githubusercontent.com/PolarSprings/dash-ml-xgb/master/assets/Data/housing_scores.csv')
 
 simpledim = pd.read_csv(repo2, skipinitialspace=True)
 scoring = pd.read_csv(repo4, skipinitialspace=True)
@@ -60,10 +60,18 @@ residsdots.update_layout({'title':{'text':'Residuals x Prices', 'font':{'size':2
                   'xaxis':{'title':{'text':'Index'}},
                   'yaxis':{'title':{'text':'Price ($)'}}})
 
-trainscores = px.scatter(scoring, x='index', y='train_scores', color_discrete_sequence=px.colors.qualitative.D3)
-trainscores.update_layout({'title':{'text':'Train scores', 'font':{'size':28},'x':0.5},
-                  'xaxis':{'title':{'text':'Train index'}},
-                  'yaxis':{'title':{'text':'R2'}}})
+
+scores = make_subplots(1,1)
+scores.add_scatter(x=scoring.index, y=scoring.train, name='Train', color_discrete_sequence=px.colors.qualitative.D3)
+scores.add_scatter(x=scoring.index, y=scoring.test, name='Test',  color_discrete_sequence=px.colors.qualitative.D3)
+scores.update_layout({'title':{'text':'Train and Test Scores, All Dimensions', 'font':{'size':28},'x':0.5},
+                     'xaxis':{'title':{'text':'n_samples'}},
+                     'yaxis':{'title':{'text':'R2 Score'}}})
+
+# trainscores = px.scatter(scoring, x='index', y='train_scores', color_discrete_sequence=px.colors.qualitative.D3)
+# trainscores.update_layout({'title':{'text':'Train scores', 'font':{'size':28},'x':0.5},
+#                   'xaxis':{'title':{'text':'Train index'}},
+#                   'yaxis':{'title':{'text':'R2'}}})
 
 # app code
 
