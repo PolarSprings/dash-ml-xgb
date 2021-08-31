@@ -55,7 +55,7 @@ layout = html.Div([
 			className='intro text'
 			),
 		html.P(
-			"""AI that can make predictions is something fairly new to the world of machine learning - as far as application goes, it's still quite new. I would be interested int joining the client side to explore these results,  communicating with the team on how they shape the journey of the client. With my background working across teams at Alibaba, I would be a great fit for the role.""",
+			"""AI that can make predictions is something fairly untested in the world of machine learning - as far as application goes, it's still quite new. I would be interested int joining the client side to explore these results,  communicating with the team on how they shape the journey of the client. With my background working across teams at Alibaba, I would be a great fit for the role.""",
 			className='intro text'
 			),
 		html.Hr(),

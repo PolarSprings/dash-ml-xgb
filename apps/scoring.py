@@ -47,16 +47,15 @@ residuals = actuals - predictions
 x_axis = np.array(range(len(actuals)))
 
 residsline = make_subplots(1,1)
-residsline.add_scatter(x=x_axis, y=actuals, name='Actuals', mode='lines+markers', marker={'opacity':0.3,'color':'#1f77b4'})
-residsline.add_scatter(x=x_axis, y=predictions, name='Predictions', mode='lines+markers', marker={'opacity':0.3,'color':'#ff7f0e' })
+residsline.add_scatter(x=x_axis, y=actuals, name='Actuals', mode='lines+markers', marker={'opacity':0.3,'color':'#739ae4'})
+residsline.add_scatter(x=x_axis, y=predictions, name='Predictions', mode='lines+markers', marker={'opacity':0.3,'color':'#78c2ad' })
 residsline.update_layout({'title':{'text':'Actuals x Predictions', 'font':{'size':28},'x':0.5},
                   'xaxis':{'title':{'text':'Index'}},
                   'yaxis':{'title':{'text':'Price ($)'}}})
 
 residsdots = make_subplots(1,1)
-
-residsdots.add_bar(x=x_axis, y=y_train, name='Prices', marker={'opacity':0.3,'color':'#1f77b4'})
-residsdots.add_scatter(x=x_axis, y=residuals, mode='markers', name='Residuals', marker={'color':'#ff7f0e'})
+residsdots.add_bar(x=x_axis, y=y_train, name='Prices', marker={'opacity':0.3,'color':'#78c2ad'})
+residsdots.add_scatter(x=x_axis, y=residuals, mode='markers', name='Residuals', marker={'symbol':'diamond','color':'#739ae4'})
 residsdots.update_layout({'title':{'text':'Residuals x Prices', 'font':{'size':28},'x':0.5},
                   'xaxis':{'title':{'text':'Index'}},
                   'yaxis':{'title':{'text':'Price ($)'}}})

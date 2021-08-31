@@ -31,34 +31,29 @@ pd.set_option('display.max_rows',None)
 data = simpledim.drop(['AdjSalePrice'], 1)
 target = simpledim[['AdjSalePrice']].squeeze()
 
-# layout
-import plotly.figure_factory as ff
-
-hist = ff.create_distplot([orighousing.AdjSalePrice, orighousing.SalePrice], ['AdjSalePrice', 'SalePrice'], bin_size=1000)
-hist.update_layout({'title':{'text':'Sales Price, Before and After Adjustment', 'font':{'size':28}, 'x':0.5}, 
-                   'xaxis':{'title':{'text':'Price ($)'}}, 
-                   'yaxis':{'title':{'text':'Frequency'}}})
-
-box = px.box(orighousing, x='YrSold',y='SalePrice', color_discrete_sequence=['#ff7f0e'])
-box.update_layout({'title':{'text':'Sale Price by Year', 'font':{'size':28}, 'x':0.5}, 
-                   'xaxis':{'title':{'text':'Year Sold'}}, 
-                   'yaxis':{'title':{'text':'Price ($)'}}})
-
 eps = 550
 min_samples = 13.5
 lab = DBSCAN(eps=eps, min_samples=min_samples).fit(data)
 simpledim['DBSCAN'] = lab.labels_
-dbs = px.scatter(simpledim, x='QualScore',y='AdjSalePrice', color='DBSCAN',opacity=0.5, facet_col='DBSCAN', trendline='ols')
+
+# layout
+
+box = px.box(orighousing, x='YrSold',y='SalePrice', color_discrete_sequence=['#739ae4'])
+box.update_layout({'title':{'text':'Sale Price by Year', 'font':{'size':28}, 'x':0.5}, 
+                   'xaxis':{'title':{'text':'Year Sold'}}, 
+                   'yaxis':{'title':{'text':'Price ($)'}}})
+
+dbs = px.scatter(simpledim, x='QualScore',y='AdjSalePrice', color='DBSCAN',opacity=0.5, facet_col='DBSCAN', trendline='ols', color_continuous_scale='dense')
 dbs.update_layout({'title':{'text':'Adjusted Sale Price, by Cluster', 'font':{'size':28}, 'x':0.5}, 
                    'xaxis':{'title':{'text':'Year Sold'}}, 
                    'yaxis':{'title':{'text':'Price ($)'}}})
 
-agg = px.scatter(simpledim, x='QualScore',y='AdjSalePrice', color='DBSCAN',opacity=0.5, trendline='ols')
+agg = px.scatter(simpledim, x='QualScore',y='AdjSalePrice', color='DBSCAN',opacity=0.5, trendline='ols', color_continuous_scale='dense')
 agg.update_layout({'title':{'text':'Adjusted Sale Price, Aggregate', 'font':{'size':28}, 'x':0.5}, 
                    'xaxis':{'title':{'text':'Year Sold'}}, 
                    'yaxis':{'title':{'text':'Price ($)'}}})
 
-# app code
+# layout
 
 layout = html.Div([
 	html.Div([
@@ -77,12 +72,24 @@ layout = html.Div([
 			]),
 		],
 		className='inflation header'),
-	dcc.Graph(id='hist',
-		figure=hist),
-	dcc.Graph(id='box',
-		figure=box),
-	dcc.Graph(id='dbs',
-		figure=dbs),
-	dcc.Graph(id='agg',
-		figure=agg),
+	dcc.Dropdown(id='dropdown-infl', multi=True,
+                 options=[{'label': x, 'value': x} for x in ['AdjSalePrice', 'SalePrice']],
+                 value=['SalePrice']),
+	dcc.Graph(id='graph-distplot', className='graph', figure={}),
+	dcc.Graph(className='graph',figure=box),
+	dcc.Graph(className='graph',figure=dbs),
+	dcc.Graph(className='graph',figure=agg),
 	])
+
+# callbacks
+
+@app.callback(
+   Output(component_id='graph-distplot', component_property='figure'),
+   [Input(component_id='dropdown-infl', component_property='value')])
+def update_ff(sales_price):
+    if len(sales_price) > 0:
+    	hist = ff.create_distplot([orighousing[str(x)] for x in sales_price],group_labels=[x for x in sales_price], bin_size=1000, colors=['#78c2ad','hotpink'])
+    	hist.update_layout({'title':{'text':'Sales Price, Before and After Adjustment', 'font':{'size':28}, 'x':0.5}, 'xaxis':{'title':{'text':'Price ($)'}}})
+    	return hist
+    elif len(sales_price) == 0:
+        raise dash.exceptions.PreventUpdate
