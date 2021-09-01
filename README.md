@@ -1,3 +1,3 @@
 # dash-ml-xgb
 
-Dash app deployed on Heroku
+Dash app deployed to Heroku
