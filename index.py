@@ -16,7 +16,7 @@ sidebar = html.Div(
         html.H2("Data Scientist Analyst", className="display-4"),
         html.Hr(),
         html.P(
-            "Using data from customers to improve the product", className="lead"
+            "Using data to improve the product", className="lead"
         ),
         dbc.Nav(
             [
