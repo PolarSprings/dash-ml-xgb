@@ -1,3 +1,3 @@
 # dash-ml-xgb
 
-Dash app deployed to Heroku
+Plotly/Dash app with multiple pages and widgets deployed to Heroku
